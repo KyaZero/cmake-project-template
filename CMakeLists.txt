@@ -9,8 +9,11 @@ include("cmake/compiler_features.cmake")
 include("cmake/compiler_warnings.cmake")
 include("cmake/auto_group_sources.cmake")
 
+set(${PROJECT_NAME}_FOLDER
+    ${PROJECT_NAME}
+    CACHE STRING "The folder that ${PROJECT_NAME} projects will be placed in.")
+
 add_subdirectory("extern")
-add_subdirectory("engine")
 add_subdirectory("app")
 
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT "app")
